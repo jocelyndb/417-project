@@ -29,7 +29,7 @@ export default function Home() {
                             priority
                         />
                     </motion.div>
-                    <h2 className={"p-4 min-w-24 min-h max-w-md text-wrap text-lg rounded-lg border-2 border-neutral-500"}
+                    <h2 className={"active:bg-neutral-300 bg-transparent select-none transition-all duration-150 p-4 min-w-24 min-h max-w-md text-wrap text-lg rounded-lg border-2 border-neutral-500"}
                         onClick={() => setTitle(snarkyTitle(setSecret))}>{title}&#8203;</h2>
                     {secret &&
                         <h2 className={"p-4 min-w-3 max-w-md text-wrap text-lg rounded-lg border-2 border-black bg-neutral-900 text-white dark:invert"}>
