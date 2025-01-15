@@ -5,9 +5,9 @@ import {fadeRiseIn} from "@/api/animations";
 import {SetStateAction, useState} from "react";
 
 const titles = ["Great Job!", "Wow, so proud of you", "You're so good at clicking buttons!", "Okay, maybe that's enough",
-    "Ok, you've had your fun", "You can stop clicking now", "PLEASE STOP", "I BEG YOU STOP CLICKING", "Fine.", "Whatever.",
-    "I'm ignoring you", "  ", "  ", "     ", "Now you've done it.", "You don't know what's coming for you",
-    "You should stop for your own good", "I'm warning you", "You've done it now.", "Congratulations!"];
+    "You've had your fun", "You can stop clicking now", "PLEASE STOP", "I BEG YOU STOP CLICKING", "Fine.", "Whatever.",
+    "I'm ignoring you", "  ", " ... ", "     ", "Now you've done it.", "You don't know what's coming for you",
+    "You should stop for your own good", "I'm warning you", "You've done it now.", "You're gonna regret this", "Just you wait", "Congratulations!"];
 
 
 export default function Home() {
@@ -19,8 +19,8 @@ export default function Home() {
         <div
             className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
             <main className="flex row-start-2 items-center sm:items-start">
-                <div className={"flex flex-col gap-4 text-center items-center"}>
-                    <motion.div initial={"initial"} animate={"animate"} variants={fadeRiseIn}>
+                <motion.div initial={"initial"} animate={"animate"} className={"flex flex-col gap-4 text-center items-center"}>
+                    <motion.div variants={fadeRiseIn}>
                         <Image
                             className="dark:invert"
                             src="/signature.svg"
@@ -31,21 +31,21 @@ export default function Home() {
                         />
                     </motion.div>
                     <div className={"flex flex-col space-y-4 items-center"}>
-                        <h2 className={"w-fit select-none justify-self-center transition-all duration-200 hover:outline-neutral-300 " +
-                            "hover:outline-4 active:bg-neutral-500 p-4 min-w-24 max-w-md " +
-                            "text-wrap text-lg rounded-lg outline outline-0 outline-transparent" +
-                            " bg-neutral-700 text-white dark:invert"}
+                        <h2 className={"select-none min-w-40 hover:outline-neutral-300 hover:dark:outline-[#191919] " +
+                            "hover:outline-4 transition-[outline,background-color] duration-200 active:bg-neutral-700 p-4 min-w-3 max-w-md " +
+                            "text-wrap text-lg rounded-full outline outline-0 outline-transparent" +
+                            " bg-neutral-700 text-white"}
                         onClick={() => setTitle(snarkyTitle(setSecret, setStart))}>{title}&#8203;</h2>
                         {secret &&
-                            <h2 className={"select-none transition-all duration-200 hover:outline-neutral-300 " +
-                                "hover:outline-4 active:bg-neutral-700 p-4 min-w-3 max-w-md " +
-                                "text-wrap text-lg rounded-lg outline outline-0 outline-transparent" +
-                                " bg-neutral-900 text-white dark:invert"}>
+                            <motion.h2 variants={fadeRiseIn} className={"select-none hover:outline-neutral-300 hover:dark:outline-[#191919] " +
+                                "hover:outline-4 transition-[outline,background-color] duration-200 active:bg-neutral-700 p-4 min-w-3 max-w-md " +
+                                "text-wrap text-lg rounded-full outline outline-0 outline-transparent" +
+                                " bg-neutral-800 text-white"}>
                                 You have just wasted {((Date.now() - start)/1000).toFixed(0)} seconds
-                            </h2>
+                            </motion.h2>
                         }
                     </div>
-                </div>
+                </motion.div>
             </main>
         </div>
     );
