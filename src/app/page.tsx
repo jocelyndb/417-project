@@ -30,8 +30,8 @@ export default function Home() {
                             priority
                         />
                     </motion.div>
-                    <div className={"space-y-4"}>
-                        <h2 className={"w-fit select-none transition-all duration-200 hover:outline-neutral-300 " +
+                    <div className={"flex flex-col space-y-4 items-center"}>
+                        <h2 className={"w-fit select-none justify-self-center transition-all duration-200 hover:outline-neutral-300 " +
                             "hover:outline-4 active:bg-neutral-500 p-4 min-w-24 max-w-md " +
                             "text-wrap text-lg rounded-lg outline outline-0 outline-transparent" +
                             " bg-neutral-700 text-white dark:invert"}
