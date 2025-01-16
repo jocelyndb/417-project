@@ -32,7 +32,7 @@ export default function Home() {
                     </motion.div>
                     <div className={"flex flex-col space-y-4 items-center"}>
                         <h2 className={"select-none min-w-40 hover:outline-neutral-300 hover:dark:outline-[#191919] " +
-                            "hover:outline-4 transition-[outline,background-color] duration-200 active:bg-neutral-700 p-4 min-w-3 max-w-md " +
+                            "hover:outline-4 transition-[outline,background-color] duration-200 active:bg-neutral-600 p-4 min-w-3 max-w-md " +
                             "text-wrap text-lg rounded-full outline outline-0 outline-transparent" +
                             " bg-neutral-700 text-white"}
                         onClick={() => setTitle(snarkyTitle(setSecret, setStart))}>{title}&#8203;</h2>
