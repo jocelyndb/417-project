@@ -4,7 +4,7 @@ import Image from "next/image";
 import {fadeRiseIn} from "@/api/animations";
 import {SetStateAction, useState} from "react";
 
-const titles = ["Great Job!", "Wow, so proud of you", "You're so good at clicking buttons!", "Okay, maybe that's enough",
+const titles = ["Great Job!", "Amazing click!", "Wow, so proud of you", "You're so good at clicking buttons!", "Okay, maybe that's enough",
     "You've had your fun", "You can stop clicking now", "PLEASE STOP", "I BEG YOU STOP CLICKING", "Fine.", "Whatever.",
     "I'm ignoring you", "  ", " ... ", "     ", "Now you've done it.", "You don't know what's coming for you",
     "You should stop for your own good", "I'm warning you", "You've done it now.", "You're gonna regret this", "Just you wait", "Congratulations!"];
