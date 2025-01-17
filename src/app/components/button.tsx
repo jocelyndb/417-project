@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
 export const enum style {
     main = "bg-neutral-800 active:bg-neutral-700 text-white",
@@ -8,7 +9,14 @@ export const enum style {
     none = "",
 }
 
-export default function Button({href = "", children, className = "", variant = style.main, ...rootDOMAttributes}) {
+interface ButtonProps {
+    href?: string;
+    children?: ReactNode;
+    className?: string;
+    variant?: string;
+}
+
+export default function Button({href = "", className = "", variant = style.main, children, ...rootDOMAttributes}:ButtonProps) {
     return (
         <Link {...rootDOMAttributes} href={href} className={"select-none hover:outline-neutral-300 hover:dark:outline-[#191919] " +
             "hover:outline-4 transition-[outline,background-color] duration-200 p-4 min-w-3 max-w-md " +
