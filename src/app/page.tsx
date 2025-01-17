@@ -1,8 +1,9 @@
 "use client"
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {fadeRiseIn} from "@/api/animations";
 import {SetStateAction, useState} from "react";
+import {fadeRiseIn} from "../api/animations";
+import Button, {style} from "./components/button";
 
 const titles = ["Great Job!", "Amazing click!", "Wow, so proud of you", "You're so good at clicking buttons!", "Okay, maybe that's enough",
     "You've had your fun", "You can stop clicking now", "PLEASE STOP", "I BEG YOU STOP CLICKING", "Fine.", "Whatever.",
@@ -31,18 +32,11 @@ export default function Home() {
                         />
                     </motion.div>
                     <div className={"flex flex-col space-y-4 items-center"}>
-                        <h2 className={"select-none min-w-40 hover:outline-neutral-300 hover:dark:outline-[#191919] " +
-                            "hover:outline-4 transition-[outline,background-color] duration-200 active:bg-neutral-600 p-4 min-w-3 max-w-md " +
-                            "text-wrap text-lg rounded-full outline outline-0 outline-transparent" +
-                            " bg-neutral-700 text-white"}
-                        onClick={() => setTitle(snarkyTitle(setSecret, setStart))}>{title}&#8203;</h2>
+                        <Button onClick={() => setTitle(snarkyTitle(setSecret, setStart))} variant={style.accent} className={"min-w-40"}>{title}</Button>
                         {secret &&
-                            <motion.h2 variants={fadeRiseIn} className={"select-none hover:outline-neutral-300 hover:dark:outline-[#191919] " +
-                                "hover:outline-4 transition-[outline,background-color] duration-200 active:bg-neutral-700 p-4 min-w-3 max-w-md " +
-                                "text-wrap text-lg rounded-full outline outline-0 outline-transparent" +
-                                " bg-neutral-800 text-white"}>
-                                You have just wasted {((Date.now() - start)/1000).toFixed(0)} seconds
-                            </motion.h2>
+                            <motion.div className={"flex"} variants={fadeRiseIn}>
+                                <Button>You have just wasted {((Date.now() - start)/1000).toFixed(0)} seconds</Button>
+                            </motion.div>
                         }
                     </div>
                 </motion.div>
