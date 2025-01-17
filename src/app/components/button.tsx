@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactNode } from "react";
+import React, {AnchorHTMLAttributes, ReactNode} from "react";
 
 export const enum style {
     main = "bg-neutral-800 active:bg-neutral-700 text-white",
@@ -9,11 +9,11 @@ export const enum style {
     none = "",
 }
 
-interface ButtonProps {
+interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
     href?: string;
     children?: ReactNode;
     className?: string;
-    variant?: string;
+    variant?: style;
 }
 
 export default function Button({href = "", className = "", variant = style.main, children, ...rootDOMAttributes}:ButtonProps) {
