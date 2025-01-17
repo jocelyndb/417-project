@@ -19,7 +19,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 export default function Button({href = "", className = "", variant = style.main, children, ...rootDOMAttributes}:ButtonProps) {
     return (
         <Link {...rootDOMAttributes} href={href} className={"select-none hover:outline-neutral-300 hover:dark:outline-[#191919] " +
-            "hover:outline-4 transition-[outline,background-color] duration-200 p-4 min-w-3 max-w-md " +
+            "hover:outline-4 active:outline-[6px] transition-[outline,background-color] duration-200 p-4 min-w-3 max-w-md " +
             "text-wrap text-lg rounded-full outline outline-0 outline-transparent" +
             " " + variant + " " + className}>
             {children}&#8203;
