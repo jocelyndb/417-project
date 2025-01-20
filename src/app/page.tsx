@@ -33,6 +33,9 @@ export default function Home() {
                     </motion.div>
                     <div className={"flex flex-col space-y-4 items-center"}>
                         <Button onClick={() => setTitle(snarkyTitle(setSecret, setStart))} variant={style.accent} className={"min-w-40"}>{title}</Button>
+                        <Button onClick={() => setTitle(snarkyTitle(setSecret, setStart))} variant={style.secondary} className={"min-w-40"}>{title}</Button>
+                        <Button onClick={() => setTitle(snarkyTitle(setSecret, setStart))} variant={style.main} className={"min-w-40"}>{title}</Button>
+                        <Button onClick={() => setTitle(snarkyTitle(setSecret, setStart))} variant={style.square} className={"min-w-40"}>{title}</Button>
                         {secret &&
                             <motion.div className={"flex"} variants={fadeRiseIn}>
                                 <Button>You have just wasted {((Date.now() - start)/1000).toFixed(0)} seconds</Button>
